@@ -1,0 +1,122 @@
+// NOTE: Fonts in index.html link tag:
+//		Nunito: Regular 400, Semi-bold 600
+//		Frank Ruhl Libre: Regular 400, Bold 700
+//		Lora: Regular 400
+
+// Reset
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Lora', sans-serif;
+  color: $default-text-color;
+}
+
+html {
+  background-color: $white;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0 auto;
+  @include font-size(16, 16, 16);
+}
+
+h1 {
+  font-family: 'Frank Ruhl Libre';
+  @include font-size(38);
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Frank Ruhl Libre';
+  font-weight: 700;
+  @include font-size(28);
+}
+
+h3 {
+  font-family: 'Nunito';
+  font-weight: 600;
+  @include font-size(22);
+  text-transform: uppercase;
+}
+
+h4,
+h5,
+h6 {
+  font-family: 'Nunito';
+}
+
+img {
+  display: block; // removes white space
+  object-fit: cover;
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  @include link-style($green);
+}
+
+// Display
+.hide-xs {
+  @include smartphone {
+    display: none !important;
+  }
+}
+
+.hide-md {
+  @include tablet {
+    display: none !important;
+  }
+}
+
+.hide-lg {
+  @include desktop {
+    display: none !important;
+  }
+}
+
+// Structure
+.container {
+  width: 100%;
+  padding: 0 $spacing-basis * 2;
+}
+.nav-avoider {
+  padding-top: $desktop-nav-height;
+}
+// Style
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+pre {
+  padding: 10px 15px;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: #fafafa;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  display: inline-flex;
+}
