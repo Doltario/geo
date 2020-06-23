@@ -2,4 +2,5 @@
 
 <template src="./Article.html"></template>
 
-<style scoped lang="scss" src="./Article.scss"></style>
+<!-- Style not scoped because it styles the body -->
+<style lang="scss" src="./Article.scss"></style>

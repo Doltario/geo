@@ -1,6 +1,136 @@
+body {
+  overscroll-behavior: none;
+}
+
 #articleContainer {
   height: 100%;
 
   #articleContent {
+    height: 100vh;
+  }
+
+  .slider-container {
+    overflow: hidden;
+    overscroll-behavior: none;
+
+    .slider-content {
+      width: 100%;
+      height: 100%;
+      overscroll-behavior: none;
+
+      .slider-section {
+        background-color: yellow;
+        opacity: 0.8;
+        width: 100vw;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
   }
 }
+
+// ::-webkit-scrollbar {
+//   width: 2px;
+//   height: 2px;
+// }
+// ::-webkit-scrollbar-button {
+//   width: 2px;
+//   height: 2px;
+// }
+
+// // Rotation is used to scroll horizontally in pure css
+// // Hence the width becomes the height, and the height becomes the width…
+// $slider-width: 100vh;
+// $slider-height: 100vw;
+// $slider-section-width: 100%;
+
+// // .slider-container {
+// //   position: absolute;
+// //   display: block;
+// //   top: 0;
+// //   left: 0;
+// //   width: 80px;
+// //   max-height: 500px;
+// //   margin: 0;
+// //   background: #abc;
+// //   overflow-y: auto;
+// //   overflow-x: hidden;
+// //   transform: rotate(-90deg) translateY(-80px);
+// //   transform-origin: right top;
+
+// //   .slider-section {
+// //     width: 100px;
+// //     height: 60px;
+// //     margin: 50px 10px;
+// //     display: block;
+// //     padding: 5px;
+// //     background: #cab;
+// //     transform: rotate(90deg);
+// //     transform-origin: right top;
+// //   }
+// // }
+
+// // .slider-container {
+// //   position: absolute;
+// //   display: block;
+// //   top: 0;
+// //   left: 0;
+// //   width: $slider-width;
+// //   height: $slider-height;
+// //   margin: 0;
+// //   background: #abc;
+// //   overflow-y: auto;
+// //   overflow-x: hidden;
+// //   transform: rotate(-90deg) translateY(-$slider-width);
+// //   transform-origin: right top;
+// //   padding: 100px 0 0 0;
+
+// //   .slider-section {
+// //     display: block;
+// //     padding: 5px;
+// //     background: #cab;
+// //     transform: rotate(90deg);
+// //     transform-origin: right top;
+// //     width: 100vh;
+// //     height: 100vw;
+// //     border: 1px solid black;
+// //     margin: 10px;
+// //   }
+// // }
+
+// ::-webkit-scrollbar {
+//   width: 2px;
+//   height: 2px;
+// }
+// ::-webkit-scrollbar-button {
+//   width: 2px;
+//   height: 2px;
+// }
+
+// .slider-container {
+//   position: absolute;
+//   display: block;
+//   top: 0;
+//   left: 0;
+//   width: 80px;
+//   max-height: 500px;
+//   margin: 0;
+//   background: #abc;
+//   overflow-y: auto;
+//   overflow-x: hidden;
+//   transform: rotate(-90deg) translateY(-80px);
+//   transform-origin: right top;
+//   top: 100px;
+//   padding: 100px 0 0 0;
+// }
+// .slider-section {
+//   display: block;
+//   transform-origin: right top;
+//   width: 140px;
+//   height: 60px;
+//   margin: 50px 10px;
+//   padding: 5px;
+//   background: #cab;
+//   transform: rotate(90deg) translateY(80px);
+// }

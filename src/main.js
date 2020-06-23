@@ -4,7 +4,12 @@ import { router } from './router/router';
 import store from '@store';
 import './global.scss';
 
-Vue.use(require('vue-moment'));
+const moment = require('moment');
+require('moment/locale/fr');
+
+Vue.use(require('vue-moment'), {
+  moment,
+});
 
 Vue.config.productionTip = false;
 

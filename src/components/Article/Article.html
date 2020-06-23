@@ -1,6 +1,21 @@
 <div id="articleContainer">
   <Navigation />
-  <div id="articleContent" class="container nav-avoider">
-    <h1></h1>
+  <div id="articleContent" class="nav-avoider slider-container">
+    <div class="slider-content" :style="`width: ${sliderWidth}px;transform: translate3d(${sliderTranslation}px, 0, 0)`">
+      <section class="slider-section background-cover" :style="`background-image: url('${article.bgUrl}');`">
+        <div class="tags-container">
+          <div v-for="tag in article.tags" class="tag-item">{{tag}}</div>
+        </div>
+        <h1 class="article-title">{{article.title}}</h1>
+        <span class="line"></span>
+        <div class="author">Par {{article.author}} - Publié le {{article.publicationDate | moment('DD/MM/YYYY')}} à {{article.publicationDate | moment('HH:mm')}}</div>
+      </section>
+      <section class="slider-section">
+        ss
+      </section>
+      <section class="slider-section">
+        aa
+      </section>
+    </div>
   </div>
 </div>

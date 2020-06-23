@@ -16,14 +16,14 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: $default-text-color;
 }
 
 html {
   background-color: $white;
   font-size: 62.5%;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 body {
@@ -119,4 +119,8 @@ pre {
   border-radius: 3px;
   border: 1px solid #ccc;
   display: inline-flex;
+}
+
+.background-cover {
+  background-size: cover;
 }
