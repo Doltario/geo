@@ -10,10 +10,10 @@ export default {
       sliderTranslation: 0,
       article: {
         tags: ['Environnement', 'Protection'],
-        title: 'Protection des abeilles, une ONG dépose un recours contre la commission européenne',
+        title: 'Les tortues marines mangent du plastique car elles sont attirées par son odeur',
         author: 'AFP',
         publicationDate: 1592402940,
-        bgUrl: 'http://localhost:8080/images/bg-article-2.jpg',
+        bgUrl: 'http://localhost:8080/images/articles/bg-article-2.png',
       },
     };
   },
@@ -24,7 +24,11 @@ export default {
   },
   methods: {
     computeSliderWidth: function() {
-      this.sliderWidth = window.innerWidth * document.querySelectorAll('.slider-section').length;
+      this.sliderWidth = 0;
+      const sliderItems = document.querySelectorAll('.slider-content > *');
+      sliderItems.forEach((sliderItem) => {
+        this.sliderWidth += sliderItem.getBoundingClientRect().width;
+      });
     },
     computeTranslation: function(event) {
       let newSliderTranslation = this.sliderTranslation - event.deltaY;

@@ -7,8 +7,54 @@ body {
 
   #articleContent {
     height: 100vh;
+
+    .header-container {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      color: $white;
+
+      .header-background {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        animation: kenburns 10s linear forwards;
+      }
+
+      .header-content {
+        position: relative;
+        animation: slide-in 0.8s ease forwards;
+
+        .tags-container {
+          display: flex;
+
+          .tag-item {
+            @include font-size(14);
+            background-color: #9baf88;
+            padding: $spacing-basis * 0.75 $spacing-basis * 1.5;
+            margin-right: $spacing-basis;
+          }
+        }
+        .article-title {
+          width: 50%;
+        }
+      }
+
+      .bottom-addon {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .bottom-addon-img {
+          max-width: 500px;
+        }
+      }
+    }
   }
 
+  // Below is slider core style
   .slider-container {
     overflow: hidden;
     overscroll-behavior: none;
@@ -18,119 +64,17 @@ body {
       height: 100%;
       overscroll-behavior: none;
 
-      .slider-section {
-        background-color: yellow;
-        opacity: 0.8;
-        width: 100vw;
-        height: 100%;
+      & > * {
         display: inline-block;
         vertical-align: top;
+        height: 100%;
+      }
+
+      .slider-section {
+        width: 100vw;
+        background-color: #fff;
+        position: relative;
       }
     }
   }
 }
-
-// ::-webkit-scrollbar {
-//   width: 2px;
-//   height: 2px;
-// }
-// ::-webkit-scrollbar-button {
-//   width: 2px;
-//   height: 2px;
-// }
-
-// // Rotation is used to scroll horizontally in pure css
-// // Hence the width becomes the height, and the height becomes the width…
-// $slider-width: 100vh;
-// $slider-height: 100vw;
-// $slider-section-width: 100%;
-
-// // .slider-container {
-// //   position: absolute;
-// //   display: block;
-// //   top: 0;
-// //   left: 0;
-// //   width: 80px;
-// //   max-height: 500px;
-// //   margin: 0;
-// //   background: #abc;
-// //   overflow-y: auto;
-// //   overflow-x: hidden;
-// //   transform: rotate(-90deg) translateY(-80px);
-// //   transform-origin: right top;
-
-// //   .slider-section {
-// //     width: 100px;
-// //     height: 60px;
-// //     margin: 50px 10px;
-// //     display: block;
-// //     padding: 5px;
-// //     background: #cab;
-// //     transform: rotate(90deg);
-// //     transform-origin: right top;
-// //   }
-// // }
-
-// // .slider-container {
-// //   position: absolute;
-// //   display: block;
-// //   top: 0;
-// //   left: 0;
-// //   width: $slider-width;
-// //   height: $slider-height;
-// //   margin: 0;
-// //   background: #abc;
-// //   overflow-y: auto;
-// //   overflow-x: hidden;
-// //   transform: rotate(-90deg) translateY(-$slider-width);
-// //   transform-origin: right top;
-// //   padding: 100px 0 0 0;
-
-// //   .slider-section {
-// //     display: block;
-// //     padding: 5px;
-// //     background: #cab;
-// //     transform: rotate(90deg);
-// //     transform-origin: right top;
-// //     width: 100vh;
-// //     height: 100vw;
-// //     border: 1px solid black;
-// //     margin: 10px;
-// //   }
-// // }
-
-// ::-webkit-scrollbar {
-//   width: 2px;
-//   height: 2px;
-// }
-// ::-webkit-scrollbar-button {
-//   width: 2px;
-//   height: 2px;
-// }
-
-// .slider-container {
-//   position: absolute;
-//   display: block;
-//   top: 0;
-//   left: 0;
-//   width: 80px;
-//   max-height: 500px;
-//   margin: 0;
-//   background: #abc;
-//   overflow-y: auto;
-//   overflow-x: hidden;
-//   transform: rotate(-90deg) translateY(-80px);
-//   transform-origin: right top;
-//   top: 100px;
-//   padding: 100px 0 0 0;
-// }
-// .slider-section {
-//   display: block;
-//   transform-origin: right top;
-//   width: 140px;
-//   height: 60px;
-//   margin: 50px 10px;
-//   padding: 5px;
-//   background: #cab;
-//   transform: rotate(90deg) translateY(80px);
-// }
