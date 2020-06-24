@@ -1,8 +1,9 @@
 <div id="articleContainer">
   <Navigation :light="lightMenu" />
   <div id="articleContent" class="slider-container">
-    <div class="progress-bar-container">
+    <div class="progress-bar-container" :class="{ light: lightMenu }">
       <div class="progress-bar-fill" :style="`width: ${progressBarWidth}px;`"></div>
+      <div class="px-4 progress-bar-text">{{article.title}}</div>
     </div>
     <div class="header-background-container">
       <img class="header-background" :style="`background-image: url('${article.bgUrl}')`" />
@@ -10,11 +11,10 @@
     </div>
     <div class="slider-content" :style="`width: ${sliderWidth}px;transform: translate3d(${sliderTranslation}px, 0, 0)`">
       <div class="slider-section header-container">
-        <div class="pl-8 header-content">
-          <div class="pb-4 tags-container">
-            <div v-for="tag in article.tags" class="tag-item">{{tag}}</div>
-          </div>
+        <div v-for="tag in article.tags" class="tag-item">{{tag}}</div>
+        <div class="ml-16 pt-15 header-content">
           <h1 class="article-title">{{article.title}}</h1>
+          <h2 class="pt-4 aticle-sub-title">Peuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia id deserunt mollit anim id est laborum.</h2>
           <span class="my-4 line"></span>
           <div class="reading-time">6 minutes de lecture</div>
           <!-- <div class="author">Par {{article.author}} - Publié le {{article.publicationDate | moment('DD/MM/YYYY')}} à {{article.publicationDate | moment('HH:mm')}}</div> -->
@@ -23,20 +23,17 @@
         <div class="right-arrow-container" @click="scrollToContent">
           <div class="right-arrow"></div>
         </div>
-
-        <!-- <div class="bottom-addon">
-          <img class="bottom-addon-img" src="/images/addons/ikea.png" />
-        </div> -->
       </div>
-      <div class="p-8 pr-16 slider-section article-content">
+      <div id="article-content-bottom-addon" class="slider-section article-content">
+        <img class="bottom-addon" src="/images/addons/ikea.png" />
+
         <img class="image-left" :src="article.content.image1" />
         <div class="pl-8">
-          <h2 class="pb-4">Peuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia id deserunt mollit anim id est laborum.</h2>
-          <p class="pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p class="pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in.</p>
           <div>
             <p class="column-7 pr-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum nisi ut aliquip ex ea net. Peuis aute
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem except laboris nisi ut aliquip ex ea commodo consequat ipsum dolor sit amet, consectetur adipiscing elit, sed do.
             </p>
             <div class="column-3">
               <img class="pb-4" :src="article.content.image2" />
@@ -44,9 +41,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="column-px-4 article-content">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus pariatur blanditiis lorem</p>
       </div>
       <div class="pl-8 column-px-4 article-content">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus pariatur blanditiis lorem</p>

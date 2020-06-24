@@ -16,7 +16,7 @@ export default {
       progressBarWidth: 0,
       lightMenu: false,
       article: {
-        tags: ['Environnement', 'Protection'],
+        tags: ['Environnement'],
         title: 'Les tortues marines mangent du plastique car elles sont attirées par son odeur',
         author: 'AFP',
         publicationDate: 1592402940,
@@ -47,7 +47,7 @@ export default {
       window.clearInterval();
 
       const interval = setInterval(() => {
-        if (this.sliderTranslation > -window.innerWidth) {
+        if (this.sliderTranslation > -window.innerWidth - window.innerWidth * 0.15) {
           this.sliderTranslation = this.sliderTranslation - 5 * 5;
           this.lightMenu = true;
           this.computeProgressBarWidth();
@@ -59,10 +59,12 @@ export default {
     computeSliderWidth: function() {
       this.sliderWidth = 0;
       const sliderItems = document.querySelectorAll('.slider-content > *');
-
+      let newWidth = 0;
       sliderItems.forEach((sliderItem) => {
-        this.sliderWidth += Math.ceil(sliderItem.getBoundingClientRect().width);
+        newWidth += sliderItem.getBoundingClientRect().width;
       });
+
+      this.sliderWidth = Math.ceil(newWidth);
     },
     scrollListener: function(event) {
       // Compute Translations

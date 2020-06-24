@@ -1,4 +1,5 @@
-// NOTE: Fonts in index.html link tag:
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=Lora&family=Nunito:ital,wght@0,400;1,300&display=swap');
+
 // NOTE:LEGACY		Nunito: Light Italic 300, Regular 400, Semi-bold 600
 //		Nunito: Extra Light Italic 200, Regular 400, Semi-bold 600
 //		Frank Ruhl Libre: Regular 400, Bold 700
@@ -35,6 +36,7 @@ body {
 h1 {
   font-family: 'Frank Ruhl Libre';
   @include font-size(38);
+  @include line-height(38);
   font-weight: 700;
 }
 

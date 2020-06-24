@@ -107,7 +107,7 @@
 
 /* Generate spacing classes */
 @mixin spacing {
-  @for $i from 1 through 20 {
+  @for $i from 1 through 40 {
     // Margins
     .m-#{$i} {
       margin: ($spacing-basis * $i) !important;

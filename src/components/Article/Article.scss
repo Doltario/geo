@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=Lora&family=Nunito:ital,wght@0,400;1,300&display=swap');
+
+// NOTE: This animation is here because it is too specific
+@keyframes slide-left {
+  0% {
+    transform: rotate(-90deg) translate3d(30%, 0%, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(-90deg) translate3d(30%, 100%, 0);
+    opacity: 1;
+  }
+}
+
 body {
   overscroll-behavior: none;
 }
@@ -23,7 +38,7 @@ img {
     }
 
     .slider-section {
-      width: 100vw;
+      width: 115vw;
       background-color: #fff;
       position: relative;
     }
@@ -33,6 +48,7 @@ img {
 #articleContainer {
   height: 100%;
   font-family: 'Lora', sans-serif;
+  @include line-height(24);
 
   .header-background-container {
     position: absolute;
@@ -69,13 +85,51 @@ img {
       position: fixed;
       z-index: 2;
       top: $desktop-nav-height;
-      height: 3px;
       width: 100%;
+      background: transparent;
+      transition: color 0.3s, background 0.5s;
+      height: $sub-nav-title-height;
+      display: flex;
+      align-items: center;
+
+      .progress-bar-text {
+        opacity: 0;
+        color: $white;
+        font-family: 'Frank Ruhl Libre', sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        @include font-size(16);
+        transition: opacity 0.3s, background 0.3s;
+      }
+
+      &.light {
+        background-color: $black;
+        .progress-bar-text {
+          opacity: 1;
+        }
+      }
 
       .progress-bar-fill {
+        position: absolute;
+        top: 0;
         background-color: $green;
-        height: 100%;
+        height: 3px;
       }
+    }
+
+    .tag-item {
+      background-color: $green;
+      padding: $spacing-basis * 0.75 $spacing-basis * 1.5;
+      height: unset;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: rotate(-90deg) translate3d(30%, 100%, 0);
+      transform-origin: 0% 100%;
+      color: $white;
+      font-family: 'Nunito', sans-serif;
+      @include font-size(12);
+      animation: slide-left 0.6s ease-out forwards;
     }
 
     .header-container {
@@ -90,18 +144,13 @@ img {
       .header-content {
         animation: slide-in 0.8s ease forwards;
 
-        .tags-container {
-          display: flex;
-
-          .tag-item {
-            @include font-size(14);
-            background-color: #9baf88;
-            padding: $spacing-basis * 0.75 $spacing-basis * 1.5;
-            margin-right: $spacing-basis;
-          }
-        }
         .article-title {
+          width: 55%;
+        }
+
+        .aticle-sub-title {
           width: 50%;
+          font-weight: 400;
         }
 
         .line {
@@ -120,7 +169,7 @@ img {
 
       .right-arrow-container {
         position: absolute;
-        right: 5vw;
+        right: 20vw;
         bottom: 5vw;
         height: 60px;
         width: 60px;
@@ -151,30 +200,37 @@ img {
           }
         }
       }
-
-      .bottom-addon {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-
-        .bottom-addon-img {
-          max-width: 500px;
-        }
-      }
     }
 
     .article-content {
       background-color: $white;
       display: inline-flex;
       align-items: center;
-      margin-top: $desktop-nav-height;
-      height: calc(100% - #{$desktop-nav-height});
+      margin-top: $desktop-nav-height + $sub-nav-title-height;
+      height: calc(100% - #{$desktop-nav-height + $sub-nav-title-height});
+    }
+
+    #article-content-bottom-addon {
+      margin-bottom: 150px;
+      padding-bottom: $spacing-basis * 8;
+      padding-left: $spacing-basis * 8;
+      padding-top: $spacing-basis * 8;
+      padding-right: $spacing-basis * 16;
+      // height: unset;
+    }
+
+    .bottom-addon {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 50%;
+      height: 50px;
+      width: unset;
+      transform: translateX(-50%);
     }
 
     .image-left {
-      width: 40%;
+      width: 33%;
     }
   }
 }
