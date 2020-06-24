@@ -6,6 +6,7 @@
     </div>
     <div class="header-background-container">
       <img class="header-background" :style="`background-image: url('${article.bgUrl}')`" />
+      <div class="overlay"></div>
     </div>
     <div class="slider-content" :style="`width: ${sliderWidth}px;transform: translate3d(${sliderTranslation}px, 0, 0)`">
       <div class="slider-section header-container">
@@ -14,11 +15,12 @@
             <div v-for="tag in article.tags" class="tag-item">{{tag}}</div>
           </div>
           <h1 class="article-title">{{article.title}}</h1>
-          <span class="line"></span>
+          <span class="my-4 line"></span>
+          <div class="reading-time">6 minutes de lecture</div>
           <!-- <div class="author">Par {{article.author}} - Publié le {{article.publicationDate | moment('DD/MM/YYYY')}} à {{article.publicationDate | moment('HH:mm')}}</div> -->
         </div>
 
-        <div class="right-arrow" @click="scrollToContent">gg</div>
+        <div class="right-arrow" @click="scrollToContent"></div>
         <!-- <div class="bottom-addon">
           <img class="bottom-addon-img" src="/images/addons/ikea.png" />
         </div> -->
