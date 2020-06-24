@@ -55,6 +55,28 @@ export default {
           text: 'Des explorateurs ont annoncé s’apprêter à entreprendre à bord d’un voilier un périple « écologique et éducatif » sur ce continent vierge et inhabité',
         },
       ],
+      addons: [
+        {
+          imgUrl: 'http://localhost:8080/images/addons/intermarche.png',
+          title: 'L’occasion de faire un apéritif gourmand',
+          text: 'Intermarché',
+        },
+        {
+          imgUrl: 'http://localhost:8080/images/addons/oui-sncf.png',
+          title: 'Baignade sauvage, découvrez le top 9 des plages insolites !',
+          text: 'Oui SNCF',
+        },
+        {
+          imgUrl: 'http://localhost:8080/images/addons/jules.png',
+          title: 'Veste en jean col Taille M Bleu et crème',
+          text: 'Jules',
+        },
+        {
+          imgUrl: 'http://localhost:8080/images/addons/easyjet.png',
+          title: 'Voyagez en Europe pour moins de 92€ aller-retour',
+          text: 'Easyjet',
+        },
+      ],
     };
   },
   mounted: function() {

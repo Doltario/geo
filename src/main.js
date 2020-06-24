@@ -7,6 +7,17 @@ import './global.scss';
 const moment = require('moment');
 require('moment/locale/fr');
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faArrowRight);
+
+library.add(fab);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
 Vue.use(require('vue-moment'), {
   moment,
 });

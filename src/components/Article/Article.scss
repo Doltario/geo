@@ -612,6 +612,161 @@ img {
       }
     }
 
+    #read-it-too {
+      width: 115vw;
+      background-color: $white;
+      color: $black;
+      display: inline-flex;
+      align-items: center;
+      margin-top: $desktop-nav-height + $sub-nav-title-height;
+      height: calc(100% - #{$desktop-nav-height + $sub-nav-title-height});
+
+      .main-title {
+        font-family: 'Frank Ruhl Libre', sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        @include font-size(20);
+      }
+
+      .content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        width: 100%;
+
+        .cards-container {
+          width: 23%;
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background-color: #fff;
+
+          .article-card {
+            cursor: pointer;
+
+            .sponsored {
+              color: rgba($black, 0.5);
+              font-family: 'Nunito', sans-serif;
+              @include font-size(11);
+            }
+
+            .top-container {
+              position: relative;
+
+              .overlay {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba($black, 0.3);
+              }
+
+              .title {
+                position: absolute;
+                bottom: 0;
+                font-family: 'Frank Ruhl Libre', sans-serif;
+                @include font-size(20);
+                font-weight: 700;
+                color: $white;
+              }
+            }
+
+            .bottom-container {
+              .description {
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #armer {
+      width: 350px;
+      background-color: $black;
+      color: $white;
+      font-family: 'Nunito', sans-serif;
+
+      .logo-container {
+        display: flex;
+        justify-content: center;
+        .logo {
+          width: 30%;
+        }
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        @include font-size(20);
+
+        .social-link {
+          color: $white !important;
+
+          transition: color 0.3s;
+          &:hover {
+            color: $green !important;
+          }
+        }
+      }
+
+      .links {
+        display: flex;
+        width: 100%;
+
+        .link {
+          @include link-style($white);
+          text-transform: uppercase;
+        }
+
+        .left {
+          width: 50%;
+        }
+
+        .right {
+          width: 50%;
+        }
+      }
+
+      .subscribe {
+        .input-container {
+          display: flex;
+
+          input[type='email'] {
+            appearance: none;
+            background: #333;
+            border: 3px solid $white;
+            padding: $spacing-basis * 1.5 $spacing-basis * 2;
+            width: 80%;
+            color: $white;
+
+            &::placeholder {
+              @include font-size(11);
+              color: $white;
+            }
+          }
+
+          .arrow {
+            background-color: #333;
+            border-top: 3px solid $white;
+            border-right: 3px solid $white;
+            border-bottom: 3px solid $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20%;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+              background-color: $white;
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+
     .article-content {
       background-color: $white;
       display: inline-flex;
