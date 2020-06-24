@@ -2,27 +2,82 @@ body {
   overscroll-behavior: none;
 }
 
+img {
+  display: inline-block;
+}
+
+// Below is slider core style
+.slider-container {
+  overflow: hidden;
+  overscroll-behavior: none;
+
+  .slider-content {
+    width: 100%;
+    height: 100%;
+    overscroll-behavior: none;
+
+    & > * {
+      display: inline-block;
+      vertical-align: top;
+      height: 100%;
+    }
+
+    .slider-section {
+      width: 100vw;
+      background-color: #fff;
+      position: relative;
+    }
+  }
+}
+
+.header-background-container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.header-background {
+  overflow: hidden;
+  position: absolute;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  animation: kenburns 6s ease-out forwards;
+  background-attachment: fixed;
+}
+
 #articleContainer {
   height: 100%;
 
+  font-family: 'Lora', sans-serif;
   #articleContent {
     height: 100vh;
+
+    .progress-bar-container {
+      position: fixed;
+      z-index: 2;
+      top: $desktop-nav-height;
+      height: 3px;
+      width: 100%;
+
+      .progress-bar-fill {
+        background-color: $green;
+        height: 100%;
+      }
+    }
 
     .header-container {
       display: inline-flex;
       flex-direction: column;
       justify-content: center;
       color: $white;
-
-      .header-background {
-        position: absolute;
-        height: 100vh;
-        width: 100vw;
-        animation: kenburns 10s linear forwards;
-      }
+      background-color: transparent !important;
+      position: relative;
+      z-index: 2;
 
       .header-content {
-        position: relative;
         animation: slide-in 0.8s ease forwards;
 
         .tags-container {
@@ -52,29 +107,17 @@ body {
         }
       }
     }
-  }
 
-  // Below is slider core style
-  .slider-container {
-    overflow: hidden;
-    overscroll-behavior: none;
+    .article-content {
+      background-color: $white;
+      display: inline-flex;
+      align-items: center;
+      margin-top: $desktop-nav-height;
+      height: calc(100% - #{$desktop-nav-height});
+    }
 
-    .slider-content {
-      width: 100%;
-      height: 100%;
-      overscroll-behavior: none;
-
-      & > * {
-        display: inline-block;
-        vertical-align: top;
-        height: 100%;
-      }
-
-      .slider-section {
-        width: 100vw;
-        background-color: #fff;
-        position: relative;
-      }
+    .image-left {
+      width: 40%;
     }
   }
 }
