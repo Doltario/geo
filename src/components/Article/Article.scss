@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=Lora&family=Nunito:ital,wght@0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Frank+Ruhl+Libre:wght@400;700&family=Lora&family=Nunito:ital,wght@0,400;1,300&display=swap');
 
 // NOTE: This animation is here because it is too specific
 @keyframes slide-left {
@@ -58,7 +58,6 @@ img {
 
     .overlay {
       position: absolute;
-
       top: 0;
       left: 0;
       height: 100%;
@@ -202,35 +201,220 @@ img {
       }
     }
 
+    #lot-of-text {
+      width: 115vw;
+      background-color: $white;
+      height: 100%;
+      margin-top: $desktop-nav-height + $sub-nav-title-height;
+      height: calc(100% - #{$desktop-nav-height + $sub-nav-title-height});
+      display: inline-flex;
+      flex-direction: column;
+
+      .top-container {
+        display: flex;
+      }
+
+      .bottom-container {
+        display: flex;
+        flex-grow: 1;
+
+        .left-container {
+          width: 75%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .text-image {
+            display: flex;
+
+            .text {
+              width: 50%;
+            }
+
+            .image-container {
+              width: 50%;
+            }
+          }
+
+          .addon {
+            display: flex;
+            justify-content: center;
+
+            .addon-image {
+              width: 40%;
+            }
+          }
+        }
+
+        .right-container {
+          width: 25%;
+        }
+      }
+    }
+
+    #crossed-images-left {
+      position: relative;
+      .text {
+        width: 400px;
+        background-color: $white;
+        position: absolute;
+        z-index: 1;
+        right: -70px;
+        top: 45%;
+        font-style: italic;
+      }
+    }
+
+    #crossed-images-right {
+      width: 137vw;
+
+      .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.25);
+        position: absolute;
+      }
+
+      .title-container {
+        position: absolute;
+        top: 22%;
+        left: 140px;
+        width: 650px;
+        color: $white;
+        font-family: 'Anton', sans-serif;
+        @include font-size(60);
+        @include line-height(65);
+
+        .sub-title {
+          color: transparent;
+          -webkit-text-stroke: 1px white;
+          text-shadow: none;
+        }
+      }
+
+      .image {
+        width: unset;
+        height: 100%;
+      }
+
+      .text-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 500px;
+        display: flex;
+        align-items: center;
+
+        .text {
+          color: $white;
+          width: 100%;
+          background-color: rgba($black, 0.6);
+        }
+      }
+    }
+
+    #standalone-image {
+      width: 140vw;
+      .image {
+        width: unset;
+        height: 100%;
+      }
+
+      .content {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        .bold {
+          font-weight: 600;
+        }
+
+        .hashtag {
+          display: inline-block;
+          border: 1px solid $black;
+          text-transform: uppercase;
+          font-family: 'Nunito', sans-serif;
+          font-weight: 600;
+          padding: $spacing-basis * 1 $spacing-basis * 2;
+          cursor: pointer;
+          @include font-size(11);
+        }
+
+        .author-card {
+          width: 50%;
+          box-shadow: 0 3px 6px rgba(#000000, 0.29);
+          display: flex;
+          @include font-size(12);
+
+          .author-name-container {
+            font-style: italic;
+          }
+
+          .date {
+            font-style: italic;
+          }
+
+          .image-container {
+            .author-image {
+              width: unset;
+            }
+          }
+
+          .content {
+            width: 75%;
+            font-family: 'Nunito', sans-serif;
+
+            .author-name {
+              @include link-style($black);
+              text-decoration: underline !important;
+            }
+
+            .follow-button-container {
+              .follow-button {
+                color: $green;
+                cursor: pointer;
+                padding-bottom: 3px;
+                font-weight: 600;
+                border-bottom: 2px solid $green;
+                display: inline-block;
+              }
+            }
+          }
+        }
+        .addon {
+          display: flex;
+          justify-content: center;
+
+          .addon-image {
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    #line-container {
+      width: 2px;
+      display: inline-flex;
+      align-items: center;
+      margin-top: $desktop-nav-height + $sub-nav-title-height;
+      height: calc(100% - #{$desktop-nav-height + $sub-nav-title-height});
+      background-color: $white;
+
+      .line {
+        height: 80%;
+        width: 100%;
+        background-color: $green;
+      }
+    }
+
     .article-content {
       background-color: $white;
       display: inline-flex;
       align-items: center;
       margin-top: $desktop-nav-height + $sub-nav-title-height;
       height: calc(100% - #{$desktop-nav-height + $sub-nav-title-height});
-    }
-
-    #article-content-bottom-addon {
-      margin-bottom: 150px;
-      padding-bottom: $spacing-basis * 8;
-      padding-left: $spacing-basis * 8;
-      padding-top: $spacing-basis * 8;
-      padding-right: $spacing-basis * 16;
-      // height: unset;
-    }
-
-    .bottom-addon {
-      position: absolute;
-      z-index: 1;
-      bottom: 0;
-      left: 50%;
-      height: 50px;
-      width: unset;
-      transform: translateX(-50%);
-    }
-
-    .image-left {
-      width: 33%;
     }
   }
 }

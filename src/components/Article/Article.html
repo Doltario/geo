@@ -17,33 +17,99 @@
           <h2 class="pt-4 aticle-sub-title">Peuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia id deserunt mollit anim id est laborum.</h2>
           <span class="my-4 line"></span>
           <div class="reading-time">6 minutes de lecture</div>
-          <!-- <div class="author">Par {{article.author}} - Publié le {{article.publicationDate | moment('DD/MM/YYYY')}} à {{article.publicationDate | moment('HH:mm')}}</div> -->
         </div>
 
         <div class="right-arrow-container" @click="scrollToContent">
           <div class="right-arrow"></div>
         </div>
       </div>
-      <div id="article-content-bottom-addon" class="slider-section article-content">
-        <img class="bottom-addon" src="/images/addons/ikea.png" />
 
-        <img class="image-left" :src="article.content.image1" />
-        <div class="pl-8">
-          <p class="pb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in.</p>
-          <div>
-            <p class="column-7 pr-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum nisi ut aliquip ex ea net. Peuis aute
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem except laboris nisi ut aliquip ex ea commodo consequat ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-            </p>
-            <div class="column-3">
-              <img class="pb-4" :src="article.content.image2" />
-              <img :src="article.content.image3" />
+      <div class="article-content pl-8" style="width:500px">
+        <div>
+          <img class="image-left" :src="article.content.image1" />
+          <div>caption</div>
+        </div>
+      </div>
+      <div id="lot-of-text" class="px-8 pt-4 slider-section">
+        <div class="top-container pb-4">
+          <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in.</p>
+          <p class="pl-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+        </div>
+        <div class="bottom-container">
+          <div class="left-container">
+            <div class="text-image">
+              <p class="text pr-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum nisi ut aliquip ex ea net. Peuis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem except laboris nisi ut aliquip ex ea commodo consequat ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+              </p>
+              <div class="image-container">
+                <img class="image" :src="article.content.image2" />
+                <div>Caption</div>
+              </div>
             </div>
+            <div class="addon">
+              <img class="addon-image" src="/images/addons/ikea.png" />
+            </div>
+          </div>
+          <div class="right-container">
+            <p class="pl-4">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
+              aliquam quaerat voluptatem.
+            </p>
           </div>
         </div>
       </div>
-      <div class="pl-8 column-px-4 article-content">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus pariatur blanditiis lorem</p>
+      <div id="crossed-images-left" class="article-content slider-section">
+        <img class="pr-4 image" :src="article.content.image3" />
+        <div class="p-4 text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+      </div>
+      <div id="crossed-images-right" class="article-content slider-section">
+        <div class="overlay"></div>
+        <div class="title-container">
+          <div class="title">Leur effectif a baissé de plus de 80%</div>
+          <div class="sub-title">au cours du siècle dernier</div>
+        </div>
+        <img class="image" :src="article.content.image4" />
+        <div class="mr-4 text-container">
+          <div class="p-4 text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum nisi ut aliquip ex ea net. Peuis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </div>
+      </div>
+      <div id="standalone-image" class="article-content slider-section">
+        <img class=" p-4 image" :src="article.content.image5" />
+        <div class="pt-4 pr-4 content">
+          <div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            <div>
+              <div class="pt-2 bold">À écouter</div>
+              <iframe src="https://open.spotify.com/embed-podcast/episode/12VHUBTCiAHRVLNra3s8xb" width="60%" height="155" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <div class="mt-2">
+                <div class="mr-2 hashtag" v-for="hashtag in article.hashtags">{{hashtag}}</div>
+              </div>
+              <div class="p-2 mt-4 author-card">
+                <div class="image-container">
+                  <img class="author-image" :src="article.author.imgUrl" />
+                </div>
+                <div class="pl-2 content">
+                  <div class="author-name-container">Par <router-link to="/author/olivier-dupont" class="author-name">{{article.author.name}}</router-link></div>
+
+                  <div class="date">Le {{article.publicationDate | moment('DD/MM/YYYY')}}, mis à jour le {{article.updateDate | moment('DD/MM/YYYY')}}</div>
+                  <div class="follow-button-container">
+                    <div class="follow-button">Suivre +</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="addon">
+            <img class="addon-image" src="/images/addons/ikea.png" />
+          </div>
+        </div>
+      </div>
+      <div id="line-container">
+        <div class="line"></div>
       </div>
     </div>
   </div>

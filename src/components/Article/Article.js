@@ -1,9 +1,9 @@
-import Navigation from '@components/Navigation/Navigation.vue';
-
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap/dist/gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+
+import Navigation from '@components/Navigation/Navigation.vue';
 
 export default {
   components: {
@@ -17,15 +17,22 @@ export default {
       lightMenu: false,
       article: {
         tags: ['Environnement'],
+        hashtags: ['Vie Marine', 'Tortue', 'Océan', 'Pollution Marine', 'Plastique'],
         title: 'Les tortues marines mangent du plastique car elles sont attirées par son odeur',
-        author: 'AFP',
+        author: {
+          name: 'Olivier Dupont',
+          imgUrl: 'http://localhost:8080/images/articles/article-author-2.png',
+        },
         publicationDate: 1592402940,
+        updateDate: 1592502940,
         bgUrl: 'http://localhost:8080/images/articles/bg-article-2.png',
         content: {
           image1: 'http://localhost:8080/images/articles/article-content-2-1.png',
           title1: 'Peuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia id deserunt mollit anim id est laborum.',
           image2: 'http://localhost:8080/images/articles/article-content-2-2.png',
           image3: 'http://localhost:8080/images/articles/article-content-2-3.png',
+          image4: 'http://localhost:8080/images/articles/article-content-2-4.png',
+          image5: 'http://localhost:8080/images/articles/article-content-2-5.png',
         },
       },
     };
@@ -35,11 +42,17 @@ export default {
 
     document.addEventListener('wheel', this.scrollListener);
 
+    console.log('gsap', gsap);
+
     gsap.from('.image-left', {
-      scrollTrigger: '.image-left',
-      y: -500,
+      scrollTrigger: {
+        trigger: '.image-left',
+      },
+      y: -400,
       duration: 5,
-      horizontal: true,
+      onUpdate: () => {
+        console.log('YOWTF');
+      },
     });
   },
   methods: {
