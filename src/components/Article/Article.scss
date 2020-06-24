@@ -118,6 +118,40 @@ img {
         }
       }
 
+      .right-arrow-container {
+        position: absolute;
+        right: 5vw;
+        bottom: 5vw;
+        height: 60px;
+        width: 60px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .right-arrow {
+          &::before {
+            content: '';
+            display: block;
+            width: 16px;
+            height: 2px;
+            background-color: $white;
+            transform-origin: calc(100% - 2px) 50%;
+            transform: rotate(45deg);
+          }
+
+          &::after {
+            content: '';
+            display: block;
+            width: 16px;
+            height: 2px;
+            background-color: $white;
+            transform-origin: calc(100% - 2px) 50%;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
       .bottom-addon {
         position: absolute;
         bottom: 0;

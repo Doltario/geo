@@ -20,7 +20,10 @@
           <!-- <div class="author">Par {{article.author}} - Publié le {{article.publicationDate | moment('DD/MM/YYYY')}} à {{article.publicationDate | moment('HH:mm')}}</div> -->
         </div>
 
-        <div class="right-arrow" @click="scrollToContent"></div>
+        <div class="right-arrow-container" @click="scrollToContent">
+          <div class="right-arrow"></div>
+        </div>
+
         <!-- <div class="bottom-addon">
           <img class="bottom-addon-img" src="/images/addons/ikea.png" />
         </div> -->
