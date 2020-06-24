@@ -409,6 +409,109 @@ img {
       }
     }
 
+    #more-articles {
+      width: 80vw;
+      background-color: $white;
+      color: $black;
+      display: inline-flex;
+      align-items: center;
+      margin-top: $desktop-nav-height + $sub-nav-title-height;
+      height: calc(100% - #{$desktop-nav-height + $sub-nav-title-height});
+
+      .main-title {
+        font-family: 'Frank Ruhl Libre', sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        @include font-size(20);
+      }
+
+      .cards-container {
+        display: flex;
+        justify-content: space-between;
+
+        .article-card {
+          width: 31%;
+
+          .top-container {
+            position: relative;
+
+            .overlay {
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              top: 0;
+              left: 0;
+              background-color: rgba($black, 0.3);
+            }
+
+            .category {
+              position: absolute;
+              top: 0;
+              right: 0;
+              font-family: 'Nunito', sans-serif;
+              color: $white;
+              background-color: $green;
+              padding: $spacing-basis * 0.75 $spacing-basis * 1.5;
+              transform: rotate(90deg) translate3d(100%, 0%, 0);
+              transform-origin: 100% 0;
+            }
+
+            .title {
+              position: absolute;
+              bottom: 0;
+              font-family: 'Frank Ruhl Libre', sans-serif;
+              @include font-size(20);
+              font-weight: 700;
+              color: $white;
+            }
+          }
+
+          .bottom-container {
+            .description {
+            }
+
+            .read-more {
+              font-family: 'Nunito', sans-serif;
+              color: $green;
+              padding-bottom: 2px;
+              font-weight: 600;
+              border-bottom: 2px solid $green;
+              color: $green;
+              display: inline-block;
+              vertical-align: middle;
+
+              .right-arrow {
+                display: inline-block;
+                vertical-align: middle;
+                padding-left: 2px;
+                cursor: pointer;
+
+                &::before {
+                  content: '';
+                  display: block;
+                  width: 8px;
+                  height: 2px;
+                  background-color: $green;
+                  transform-origin: calc(100% - 2px) 50%;
+                  transform: rotate(45deg);
+                }
+
+                &::after {
+                  content: '';
+                  display: block;
+                  width: 8px;
+                  height: 2px;
+                  background-color: $green;
+                  transform-origin: calc(100% - 2px) 50%;
+                  transform: rotate(-45deg);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
     .article-content {
       background-color: $white;
       display: inline-flex;

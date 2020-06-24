@@ -35,6 +35,26 @@ export default {
           image5: 'http://localhost:8080/images/articles/article-content-2-5.png',
         },
       },
+      otherArticles: [
+        {
+          category: 'Environnement',
+          imgUrl: 'http://localhost:8080/images/other-articles/other-articles-1.png',
+          title: 'Les méduses, gagnantes du bouleversement des océans',
+          text: 'Entre surpêche, réchauffement des eaux et multiplication du plastique, les méduses profitent des bouleversements causés par les humains dans les océans.',
+        },
+        {
+          category: 'Environnement',
+          imgUrl: 'http://localhost:8080/images/other-articles/other-articles-2.png',
+          title: 'Océan : les plus belles photos de faune sous- marine capturées en 2020',
+          text: 'Le concours Ocean Art Underwater Photo a dévoilé les gagnants de son édition 2020 et leurs extraordinaires clichés capturés dans les fonds marins.',
+        },
+        {
+          category: 'Environnement',
+          imgUrl: 'http://localhost:8080/images/other-articles/other-articles-3.png',
+          title: 'Antarctique: expédition « écologique et éducative » pour évaluer la pollution',
+          text: 'Des explorateurs ont annoncé s’apprêter à entreprendre à bord d’un voilier un périple « écologique et éducatif » sur ce continent vierge et inhabité',
+        },
+      ],
     };
   },
   mounted: function() {
