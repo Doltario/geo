@@ -23,7 +23,6 @@
           <div class="right-arrow"></div>
         </div>
       </div>
-
       <div class="article-content pl-8" style="width:500px">
         <div>
           <img class="image-left" :src="article.content.image1" />
@@ -112,7 +111,7 @@
         <div class="line"></div>
       </div>
       <div id="more-articles">
-        <div class="px-4">
+        <div class="px-8">
           <h2 class="pb-4 main-title">Ces articles pourraient vous intéresser</h2>
           <div class="cards-container">
             <div v-for="article in otherArticles" class="article-card">
@@ -129,6 +128,28 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div id="newsletter" class="article-content">
+        <div class="overlay"></div>
+        <div class="content px-4">
+          <div class="pb-4 top-container">
+            <div class="line mr-2"></div>
+            <div class="title">S'inscrire à la <span class="bold">Geo</span>news</div>
+          </div>
+          <div class="pb-4 description-container">
+            <div class="description-first-line bold">Articles, quiz, vidéos, podacts :</div>
+            <div class="description">inscrivez-vous à notre newsletter pour les recevoir chaque semaine directement dans votre boîte mail !</div>
+          </div>
+          <input class="mb-2" type="text" name="" id="" placeholder="Prénom" />
+          <input type="text" name="" id="" placeholder="Adresse mail" />
+          <div class="bottom-container mt-4">
+            <div class="input"></div>
+            <div class="pl-2 links">J’accepte les <span class="underline">conditions générales d’utilisations</span> et la <span class="underline">charte de protection des données</span></div>
+          </div>
+          <div class="mt-4 button-container">
+            <div class="py-2 px-4 button">Valider</div>
           </div>
         </div>
       </div>

@@ -127,3 +127,16 @@ pre {
 .background-cover {
   background-size: cover;
 }
+
+input[type='text'],
+input[type='password'] {
+  appearance: none;
+  background: rgba($white, 0.3);
+  border: 1px solid $white;
+  padding: $spacing-basis * 1.5 $spacing-basis * 2;
+
+  &::placeholder {
+    @include font-size(11);
+    color: $white;
+  }
+}
