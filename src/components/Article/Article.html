@@ -58,13 +58,19 @@
           <div class="right-arrow"></div>
         </div>
       </div>
-      <div class="article-content pl-8" style="width:500px">
-        <div>
-          <vue-aos animation-class="slide-down">
-            <img class="image-left" :src="article.content.image1" />
+      <div id="image-solo" class="article-content pl-8" style="width:500px">
+        <vue-aos animation-class="slide-down">
+          <div>
+            <div style="position: relative;">
+              <div class="overlay-container">
+                <div class="overlay"></div>
+                <font-awesome-icon class="play" icon="play" />
+              </div>
+              <img class="image-left" :src="article.content.image1" />
+            </div>
             <div>Caption</div>
-          </vue-aos>
-        </div>
+          </div>
+        </vue-aos>
       </div>
       <div id="lot-of-text" class="px-8 pt-4 slider-section">
         <div class="top-container pb-4">

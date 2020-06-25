@@ -63,6 +63,15 @@ img {
       height: 100%;
       width: 100%;
     }
+
+    .play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: $white;
+      @include font-size(40);
+      transform: translate3d(-50%, -50%, 0);
+    }
   }
 }
 
