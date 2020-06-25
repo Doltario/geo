@@ -1,7 +1,7 @@
-import { gsap } from 'gsap/dist/gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+// import { gsap } from 'gsap/dist/gsap';
+// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import VueAos from 'vue-aos';
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 import Navigation from '@components/Navigation/Navigation.vue';
 
@@ -16,6 +16,7 @@ export default {
       sliderTranslation: 0,
       progressBarWidth: 0,
       lightMenu: false,
+      showSticky: false,
       article: {
         tags: ['Environnement'],
         hashtags: ['Vie Marine', 'Tortue', 'Océan', 'Pollution Marine', 'Plastique'],
@@ -106,6 +107,7 @@ export default {
         if (this.sliderTranslation > -window.innerWidth - window.innerWidth * 0.15) {
           this.sliderTranslation = this.sliderTranslation - 5 * 5;
           this.lightMenu = true;
+          this.showSticky = true;
           this.computeProgressBarWidth();
         } else {
           window.clearInterval(interval);
@@ -139,6 +141,12 @@ export default {
 
       // Trigger dark/light menu on scroll
       // if (this.sliderTranslation * -1 > document.querySelector('.slider-content').firstElementChild.getBoundingClientRect().width) {
+      if (this.sliderTranslation * -1 > document.querySelector('.slider-content').firstElementChild.getBoundingClientRect().width) {
+        this.showSticky = true;
+      } else {
+        this.showSticky = false;
+      }
+
       if (this.sliderTranslation < 0) {
         this.lightMenu = true;
       } else {
