@@ -1,6 +1,6 @@
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
+import VueAos from 'vue-aos';
 gsap.registerPlugin(ScrollTrigger);
 
 import Navigation from '@components/Navigation/Navigation.vue';
@@ -8,6 +8,7 @@ import Navigation from '@components/Navigation/Navigation.vue';
 export default {
   components: {
     Navigation,
+    VueAos,
   },
   data() {
     return {
@@ -84,18 +85,18 @@ export default {
 
     document.addEventListener('wheel', this.scrollListener);
 
-    console.log('gsap', gsap);
+    // console.log('gsap', gsap);
 
-    gsap.from('.image-left', {
-      scrollTrigger: {
-        trigger: '.image-left',
-      },
-      y: -400,
-      duration: 5,
-      onUpdate: () => {
-        console.log('YOWTF');
-      },
-    });
+    // gsap.from('.image-left', {
+    //   scrollTrigger: {
+    //     trigger: '.image-left',
+    //   },
+    //   y: -400,
+    //   duration: 5,
+    //   onUpdate: () => {
+    //     console.log('YOWTF');
+    //   },
+    // });
   },
   methods: {
     scrollToContent: function() {

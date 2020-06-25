@@ -10,7 +10,7 @@
   }
 }
 
-@keyframes slide-in {
+@keyframes slide-down {
   0% {
     transform: translateY(-40px);
     opacity: 0;
@@ -20,4 +20,24 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-down {
+  animation: slide-down 0.8s ease forwards;
+}
+
+.slide-right {
+  animation: slide-right 0.8s ease forwards;
 }

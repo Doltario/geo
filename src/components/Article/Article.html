@@ -1,5 +1,6 @@
 <div id="articleContainer">
   <Navigation :light="lightMenu" />
+  <div id="fixed-navigation"></div>
   <div id="articleContent" class="slider-container">
     <div class="progress-bar-container" :class="{ light: lightMenu }">
       <div class="progress-bar-fill" :style="`width: ${progressBarWidth}px;`"></div>
@@ -25,25 +26,35 @@
       </div>
       <div class="article-content pl-8" style="width:500px">
         <div>
-          <img class="image-left" :src="article.content.image1" />
-          <div>caption</div>
+          <vue-aos animation-class="slide-down">
+            <img class="image-left" :src="article.content.image1" />
+            <div>Caption</div>
+          </vue-aos>
         </div>
       </div>
       <div id="lot-of-text" class="px-8 pt-4 slider-section">
         <div class="top-container pb-4">
-          <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in.</p>
-          <p class="pl-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+          <vue-aos animation-class="slide-down">
+            <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in.</p>
+          </vue-aos>
+          <vue-aos animation-class="slide-down" :threshold="0.2">
+            <p class="pl-4">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+          </vue-aos>
         </div>
         <div class="bottom-container">
           <div class="left-container">
             <div class="text-image">
-              <p class="text pr-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum nisi ut aliquip ex ea net. Peuis aute
-                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem except laboris nisi ut aliquip ex ea commodo consequat ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-              </p>
+              <vue-aos animation-class="slide-down" :threshold="1">
+                <p class="text pr-4">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum nisi ut aliquip ex ea net. Peuis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem except laboris nisi ut aliquip ex ea commodo consequat ipsum dolor sit amet, consectetur adipiscing elit, sed do.
+                </p>
+              </vue-aos>
               <div class="image-container">
-                <img class="image" :src="article.content.image2" />
-                <div>Caption</div>
+                <vue-aos animation-class="slide-down">
+                  <img class="image" :src="article.content.image2" />
+                  <div>Caption</div>
+                </vue-aos>
               </div>
             </div>
             <div class="addon">
@@ -51,61 +62,80 @@
             </div>
           </div>
           <div class="right-container">
-            <p class="pl-4">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
-              aliquam quaerat voluptatem.
-            </p>
+            <vue-aos animation-class="slide-down" threshold="0.4">
+              <p class="pl-4">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
+                aliquam quaerat voluptatem.
+              </p>
+            </vue-aos>
           </div>
         </div>
       </div>
       <div id="crossed-images-left" class="article-content slider-section">
         <img class="pr-4 image" :src="article.content.image3" />
-        <div class="p-4 text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+        <vue-aos animation-class="slide-right">
+          <div class="p-4 text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+        </vue-aos>
       </div>
       <div id="crossed-images-right" class="article-content slider-section">
         <div class="overlay"></div>
         <div class="title-container">
-          <div class="title">Leur effectif a baissé de plus de 80%</div>
-          <div class="sub-title">au cours du siècle dernier</div>
+          <vue-aos animation-class="slide-down">
+            <div class="title">Leur effectif a baissé de plus de 80%</div>
+          </vue-aos>
+          <vue-aos animation-class="slide-down" threshold="0.6">
+            <div class="sub-title">au cours du siècle dernier</div>
+          </vue-aos>
         </div>
         <img class="image" :src="article.content.image4" />
         <div class="mr-4 text-container">
-          <div class="p-4 text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum nisi ut aliquip ex ea net. Peuis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </div>
+          <vue-aos animation-class="slide-right">
+            <div class="p-4 text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum nisi ut aliquip ex ea net. Peuis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </vue-aos>
         </div>
       </div>
       <div id="standalone-image" class="article-content slider-section">
-        <img class=" p-4 image" :src="article.content.image5" />
-        <div class="pt-4 pr-4 content">
-          <div>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <vue-aos animation-class="slide-down" :threshold="0.2">
+          <img class=" p-4 image" :src="article.content.image5" />
+        </vue-aos>
+        <vue-aos animation-class="slide-down" :threshold="0.2">
+          <div class="pt-4 pr-4 content">
             <div>
-              <div class="pt-2 bold">À écouter</div>
-              <iframe src="https://open.spotify.com/embed-podcast/episode/12VHUBTCiAHRVLNra3s8xb" width="60%" height="155" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-              <div class="mt-2">
-                <div class="mr-2 hashtag" v-for="hashtag in article.hashtags">{{hashtag}}</div>
-              </div>
-              <div class="p-2 mt-4 author-card">
-                <div class="image-container">
-                  <img class="author-image" :src="article.author.imgUrl" />
-                </div>
-                <div class="pl-2 content">
-                  <div class="author-name-container">Par <router-link to="/author/olivier-dupont" class="author-name">{{article.author.name}}</router-link></div>
+              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
 
-                  <div class="date">Le {{article.publicationDate | moment('DD/MM/YYYY')}}, mis à jour le {{article.updateDate | moment('DD/MM/YYYY')}}</div>
-                  <div class="follow-button-container">
-                    <div class="follow-button">Suivre +</div>
+              <div>
+                <vue-aos animation-class="slide-down">
+                  <div class="pt-2 bold">À écouter</div>
+                </vue-aos>
+                <iframe src="https://open.spotify.com/embed-podcast/episode/12VHUBTCiAHRVLNra3s8xb" width="60%" height="155" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                <div class="mt-2">
+                  <div class="mr-2 hashtag" v-for="hashtag in article.hashtags">
+                    {{hashtag}}
+                  </div>
+                </div>
+                <div class="p-2 mt-4 author-card">
+                  <div class="image-container">
+                    <img class="author-image" :src="article.author.imgUrl" />
+                  </div>
+                  <div class="pl-2 content">
+                    <div class="author-name-container">Par <router-link to="/author/olivier-dupont" class="author-name">{{article.author.name}}</router-link></div>
+
+                    <div class="date">Le {{article.publicationDate | moment('DD/MM/YYYY')}}, mis à jour le {{article.updateDate | moment('DD/MM/YYYY')}}</div>
+                    <div class="follow-button-container">
+                      <div class="follow-button">Suivre +</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="addon">
+              <img class="addon-image" src="/images/addons/ikea.png" />
+            </div>
           </div>
-          <div class="addon">
-            <img class="addon-image" src="/images/addons/ikea.png" />
-          </div>
-        </div>
+        </vue-aos>
       </div>
       <div id="line-container">
         <div class="line"></div>
@@ -114,115 +144,127 @@
         <div class="px-8">
           <h2 class="pb-4 main-title">Ces articles pourraient vous intéresser</h2>
           <div class="cards-container">
-            <div v-for="article in otherArticles" class="article-card">
-              <div class="top-container">
-                <div class="overlay"></div>
-                <img :src="article.imgUrl" />
-                <div class="category">{{article.category}}</div>
-                <div class="p-2 title">{{article.title}}</div>
-              </div>
-              <div class="bottom-container">
-                <div class="pt-2 pr-2 description">{{article.text}}</div>
-                <div class="read-more-container">
-                  <div class="read-more">Lire <span class="right-arrow"></span></div>
+            <div v-for="article in otherArticles" style="width:31%">
+              <vue-aos animation-class="slide-down" :threshold="0.2">
+                <div class="article-card">
+                  <div class="top-container">
+                    <div class="overlay"></div>
+                    <img :src="article.imgUrl" />
+                    <div class="category">{{article.category}}</div>
+                    <div class="p-2 title">{{article.title}}</div>
+                  </div>
+                  <div class="bottom-container">
+                    <div class="pt-2 pr-2 description">{{article.text}}</div>
+                    <div class="read-more-container">
+                      <div class="read-more">Lire <span class="right-arrow"></span></div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </vue-aos>
             </div>
           </div>
         </div>
       </div>
       <div id="newsletter" class="article-content">
         <div class="overlay"></div>
-        <div class="content px-4">
-          <div class="pb-4 top-container">
-            <div class="line mr-2"></div>
-            <div class="title">S'inscrire à la <span class="bold">Geo</span>news</div>
+        <vue-aos animation-class="slide-down" :threshold="1">
+          <div class="content px-4">
+            <div class="pb-4 top-container">
+              <div class="line mr-2"></div>
+              <div class="title">S'inscrire à la <span class="bold">Geo</span>news</div>
+            </div>
+            <div class="pb-4 description-container">
+              <div class="description-first-line bold">Articles, quiz, vidéos, podacts :</div>
+              <div class="description">inscrivez-vous à notre newsletter pour les recevoir chaque semaine directement dans votre boîte mail !</div>
+            </div>
+            <input class="mb-2" type="text" name="" id="" placeholder="Prénom" />
+            <input type="text" name="" id="" placeholder="Adresse mail" />
+            <div class="bottom-container mt-4">
+              <div class="input"></div>
+              <div class="pl-2 links">J’accepte les <span class="underline">conditions générales d’utilisations</span> et la <span class="underline">charte de protection des données</span></div>
+            </div>
+            <div class="mt-4 button-container">
+              <div class="py-2 px-4 button">Valider</div>
+            </div>
           </div>
-          <div class="pb-4 description-container">
-            <div class="description-first-line bold">Articles, quiz, vidéos, podacts :</div>
-            <div class="description">inscrivez-vous à notre newsletter pour les recevoir chaque semaine directement dans votre boîte mail !</div>
-          </div>
-          <input class="mb-2" type="text" name="" id="" placeholder="Prénom" />
-          <input type="text" name="" id="" placeholder="Adresse mail" />
-          <div class="bottom-container mt-4">
-            <div class="input"></div>
-            <div class="pl-2 links">J’accepte les <span class="underline">conditions générales d’utilisations</span> et la <span class="underline">charte de protection des données</span></div>
-          </div>
-          <div class="mt-4 button-container">
-            <div class="py-2 px-4 button">Valider</div>
-          </div>
-        </div>
+        </vue-aos>
       </div>
       <div id="read-it-too">
         <div class="px-8">
           <h2 class="pb-4 main-title">À lire aussi</h2>
           <div class="content">
-            <div v-for="addon in addons" class="cards-container">
-              <div class="article-card">
-                <div class="text-right sponsored">
-                  Contenu sponsorisé
+            <div style="width: 23%" v-for="addon in addons">
+              <vue-aos animation-class="slide-down">
+                <div class="cards-container">
+                  <div class="article-card">
+                    <div class="text-right sponsored">
+                      Contenu sponsorisé
+                    </div>
+                    <div class="top-container">
+                      <div class="overlay"></div>
+                      <img :src="addon.imgUrl" />
+                      <div class="category">{{addon.category}}</div>
+                      <div class="p-2 title">{{addon.title}}</div>
+                    </div>
+                    <div class="bottom-container">
+                      <div class="pr-2 description">{{addon.text}}</div>
+                    </div>
+                  </div>
+                  <div class="article-card">
+                    <div class="text-right sponsored">
+                      Contenu sponsorisé
+                    </div>
+                    <div class="top-container">
+                      <div class="overlay"></div>
+                      <img :src="addon.imgUrl" />
+                      <div class="category">{{addon.category}}</div>
+                      <div class="p-2 title">{{addon.title}}</div>
+                    </div>
+                    <div class="bottom-container">
+                      <div class="pr-2 description">{{addon.text}}</div>
+                    </div>
+                  </div>
                 </div>
-                <div class="top-container">
-                  <div class="overlay"></div>
-                  <img :src="addon.imgUrl" />
-                  <div class="category">{{addon.category}}</div>
-                  <div class="p-2 title">{{addon.title}}</div>
-                </div>
-                <div class="bottom-container">
-                  <div class="pr-2 description">{{addon.text}}</div>
-                </div>
-              </div>
-              <div class="article-card">
-                <div class="text-right sponsored">
-                  Contenu sponsorisé
-                </div>
-                <div class="top-container">
-                  <div class="overlay"></div>
-                  <img :src="addon.imgUrl" />
-                  <div class="category">{{addon.category}}</div>
-                  <div class="p-2 title">{{addon.title}}</div>
-                </div>
-                <div class="bottom-container">
-                  <div class="pr-2 description">{{addon.text}}</div>
-                </div>
-              </div>
+              </vue-aos>
             </div>
           </div>
         </div>
       </div>
       <footer id="armer" class="article-content">
-        <div class="px-4 content">
-          <div class="mb-4 logo-container text-center">
-            <img class="logo" src="http://localhost:8080/images/logo/logo-vert.svg" />
-          </div>
-          <div class="mb-4 socials" style="color: white">
-            <a class="social-link" href="https://www.facebook.com/GEOmagFrance"><font-awesome-icon :icon="['fab', 'facebook-f']"/></a>
-            <a class="social-link" href="https://www.instagram.com/magazinegeo/"><font-awesome-icon class="mx-2" :icon="['fab', 'instagram']"/></a>
-            <a class="social-link" href="https://twitter.com/geofr"><font-awesome-icon :icon="['fab', 'twitter']"/></a>
-          </div>
-          <div class="links">
-            <div class="left">
-              <div><router-link to="/environnement" class="link">Environnement</router-link></div>
-              <div><router-link to="/environnement" class="link">Environnement</router-link></div>
-              <div><router-link to="/environnement" class="link">Environnement</router-link></div>
+        <vue-aos animation-class="slide-down" :threshold="0.5">
+          <div class="px-4 content">
+            <div class="mb-4 logo-container text-center">
+              <img class="logo" src="http://localhost:8080/images/logo/logo-vert.svg" />
             </div>
-            <div class="right text-right">
-              <div><router-link to="/environnement" class="link">Environnement</router-link></div>
-              <div><router-link to="/environnement" class="link">Environnement</router-link></div>
-              <div><router-link to="/environnement" class="link">Environnement</router-link></div>
+            <div class="mb-4 socials" style="color: white">
+              <a class="social-link" href="https://www.facebook.com/GEOmagFrance"><font-awesome-icon :icon="['fab', 'facebook-f']"/></a>
+              <a class="social-link" href="https://www.instagram.com/magazinegeo/"><font-awesome-icon class="mx-2" :icon="['fab', 'instagram']"/></a>
+              <a class="social-link" href="https://twitter.com/geofr"><font-awesome-icon :icon="['fab', 'twitter']"/></a>
             </div>
-          </div>
+            <div class="links">
+              <div class="left">
+                <div><router-link to="/environnement" class="link">Environnement</router-link></div>
+                <div><router-link to="/environnement" class="link">Environnement</router-link></div>
+                <div><router-link to="/environnement" class="link">Environnement</router-link></div>
+              </div>
+              <div class="right text-right">
+                <div><router-link to="/environnement" class="link">Environnement</router-link></div>
+                <div><router-link to="/environnement" class="link">Environnement</router-link></div>
+                <div><router-link to="/environnement" class="link">Environnement</router-link></div>
+              </div>
+            </div>
 
-          <div class="mt-4 subscribe">
-            <label for="email" class="text bold">S'abonner à la newsletter</label>
-            <div class="pt-1 input-container">
-              <input id="email" type="email" placeholder="adresse@mail.com" />
-              <div class="arrow">
-                <font-awesome-icon icon="arrow-right" />
+            <div class="mt-4 subscribe">
+              <label for="email" class="text bold">S'abonner à la newsletter</label>
+              <div class="pt-1 input-container">
+                <input id="email" type="email" placeholder="adresse@mail.com" />
+                <div class="arrow">
+                  <font-awesome-icon icon="arrow-right" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </vue-aos>
       </footer>
     </div>
   </div>
