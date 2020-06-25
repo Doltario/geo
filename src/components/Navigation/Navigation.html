@@ -1,8 +1,20 @@
-<nav id="navigationContainer" class="container" :class="{ light: light }">
+<nav id="navigationContainer" class="px-4" :class="{ light: light }">
   <div class="left-container">
-    <router-link to="/" class="home-link">Geo</router-link>
+    <router-link to="/" class="home-link">Menu</router-link>
   </div>
+  <div class="logo-container">
+    <img v-if="!light" class="logo" src="http://localhost:8080/images/logo/logo-blanc.svg" />
+    <img v-if="light" class="logo" src="http://localhost:8080/images/logo/logo-vert.svg" />
+  </div>
+
   <div class="right-container">
-    <router-link to="/about" class="about-link">About</router-link>
+    <div class="mr-4">
+      <font-awesome-icon class="mr-1" icon="search" />
+      <router-link to="/search" class="about-link">Rechercher</router-link>
+    </div>
+    <div>
+      <font-awesome-icon class="mr-1" icon="user-circle" />
+      <router-link to="/my-account" class="about-link">Mon compte</router-link>
+    </div>
   </div>
 </nav>

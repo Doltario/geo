@@ -10,9 +10,9 @@ require('moment/locale/fr');
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faArrowRight, faLink, faThumbsUp, faBookmark, faFont } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faLink, faThumbsUp, faBookmark, faFont, faSearch, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faArrowRight, faLink, faThumbsUp, faBookmark, faFont);
+library.add(faArrowRight, faLink, faThumbsUp, faBookmark, faFont, faSearch, faUserCircle);
 
 library.add(fab);
 
