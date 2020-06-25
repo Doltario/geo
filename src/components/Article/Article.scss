@@ -49,6 +49,23 @@ img {
   }
 }
 
+#image-solo {
+  .overlay-container {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    .overlay {
+      background-color: rgba($black, 0.3);
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
 // Sticky navigation
 #sticky-navigation {
   position: fixed;
@@ -176,7 +193,7 @@ img {
     }
 
     .tag-item {
-      background-color: #99c6c1;
+      background-color: $environement;
       padding: $spacing-basis * 0.75 $spacing-basis * 1.5;
       height: unset;
       position: absolute;
@@ -386,8 +403,23 @@ img {
         justify-content: space-between;
         height: 100%;
 
-        .bold {
-          font-weight: 600;
+        .main-title {
+          font-family: 'Nunito', sans-serif;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          @include font-size(15);
+          margin-bottom: $spacing-basis * 2;
+
+          &:before {
+            content: '';
+            background-color: $black;
+            height: 2px;
+            width: 60px;
+            display: inline-flex;
+            vertical-align: middle;
+            margin-right: $spacing-basis * 2;
+          }
         }
 
         .hashtag {
@@ -478,10 +510,21 @@ img {
       height: calc(100% - #{$desktop-nav-height + $sub-nav-title-height});
 
       .main-title {
-        font-family: 'Frank Ruhl Libre', sans-serif;
+        font-family: 'Nunito', sans-serif;
         font-weight: 700;
+        text-transform: uppercase;
         letter-spacing: 1px;
         @include font-size(20);
+
+        &:before {
+          content: '';
+          background-color: $black;
+          height: 2px;
+          width: 90px;
+          display: inline-flex;
+          vertical-align: middle;
+          margin-right: $spacing-basis * 2;
+        }
       }
 
       .cards-container {
@@ -509,7 +552,7 @@ img {
               right: 0;
               font-family: 'Nunito', sans-serif;
               color: $white;
-              background-color: $green;
+              background-color: $environement;
               padding: $spacing-basis * 0.75 $spacing-basis * 1.5;
               transform: rotate(90deg) translate3d(100%, 0%, 0);
               transform-origin: 100% 0;
@@ -677,10 +720,21 @@ img {
       height: calc(100% - #{$desktop-nav-height + $sub-nav-title-height});
 
       .main-title {
-        font-family: 'Frank Ruhl Libre', sans-serif;
+        font-family: 'Nunito', sans-serif;
         font-weight: 700;
+        text-transform: uppercase;
         letter-spacing: 1px;
         @include font-size(20);
+
+        &:before {
+          content: '';
+          background-color: $black;
+          height: 2px;
+          width: 90px;
+          display: inline-flex;
+          vertical-align: middle;
+          margin-right: $spacing-basis * 2;
+        }
       }
 
       .content {
@@ -742,6 +796,10 @@ img {
       color: $white;
       font-family: 'Nunito', sans-serif;
 
+      .baseline {
+        color: rgba($white, 0.75);
+      }
+
       .logo-container {
         display: flex;
         justify-content: center;
@@ -765,6 +823,11 @@ img {
         }
       }
 
+      .thematiques,
+      .services {
+        color: rgba($white, 0.5);
+      }
+
       .links {
         display: flex;
         width: 100%;
@@ -772,6 +835,30 @@ img {
         .link {
           @include link-style($white);
           text-transform: uppercase;
+          transition: all 0.3s;
+          @include font-size(12);
+          letter-spacing: 1px;
+
+          &.environement {
+            &:hover {
+              color: $environement !important;
+            }
+          }
+          &.voyage {
+            &:hover {
+              color: $voyage !important;
+            }
+          }
+          &.histoire {
+            &:hover {
+              color: $histoire !important;
+            }
+          }
+          &.aventure {
+            &:hover {
+              color: $aventure !important;
+            }
+          }
         }
 
         .left {
@@ -784,6 +871,10 @@ img {
       }
 
       .subscribe {
+        .text {
+          display: block;
+        }
+
         .input-container {
           display: flex;
 
